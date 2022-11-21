@@ -1,0 +1,21 @@
+---
+version: 5
+# Hiera configuration file. Define here your hierarchies.
+
+defaults:
+  datadir: data
+hierarchy:
+  - name: "Eyaml hierarchy"
+    lookup_key: eyaml_lookup_key # eyaml backend
+    paths:
+      - "desktops/%{networking.hostname}.yaml"
+      - "role/%{::role}.yaml"
+      - "zone/%{::zone}.yaml"
+      - "default.yaml"
+    options:
+      pkcs7_private_key: keys/private_key.pkcs7.pem
+      pkcs7_public_key:  keys/public_key.pkcs7.pem
+# These personal Hiera eyaml keys must be generated with the eyaml createkeys command
+# It creates the eyaml keypair under the local keys directory.
+# The keys/private_key.pkcs7.pem is private and added to .gitignore as it should not be shared.
+# The keys/public_key.pkcs7.pem is public and can be shared.

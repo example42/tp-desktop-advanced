@@ -1,0 +1,5 @@
+.git/
+.vagrant/
+.DS_Store
+keys/private_key.pkcs7.pem
+modules/
