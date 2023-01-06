@@ -2,6 +2,7 @@
 # Here are the default settings, by are applied to all desktops
 
 # In a Desktop environment we don't want to purge unmanaged /etc/tp files
+# If set to true, it will remove all unmanaged files in /etc/tp
 tp::purge_dirs: false
 
 # When looking for the tp::osfamily_install_hash values, use Hiera's deep merge method. 
